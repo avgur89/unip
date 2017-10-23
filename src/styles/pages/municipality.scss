@@ -1,0 +1,375 @@
+[data-page='municipality'] {
+  // PROGRESS BAR SECTION
+  .progress-bar {
+    &__pages-page {
+      height: 33.3333%;
+      color: $black;
+    }
+    &__bar {
+      height: 33.3333%;
+    }
+  }
+
+  // CALL TO ACTION SECTION
+  .munic__cta {
+    position: relative;
+
+    height: 562px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      //background-color: rgba(240, 240, 240, 0.9);
+    }
+
+    @media (max-width: $minDesktop) {
+      height: 613px;
+      padding: 46px 0 50px 0;
+    }
+
+    @media (max-width: $minTablet) {
+      height: 415px;
+      padding: 49px 0 50px 0;
+    }
+
+    .container {
+      height: 562px;
+
+      @media (max-width: $minDesktop) {
+        height: 613px;
+      }
+
+      @media (max-width: $minTablet) {
+        height: 415px;
+        padding: 0 40px;
+      }
+
+      .page-number__line {
+        background-color: #e2e2e2;
+      }
+      .page-number__square {
+        border-color: #e2e2e2;
+        background-color: #f0f0f0;
+      }
+      .page-number__number {
+        color: $black;
+      }
+    }
+
+    &-desc {
+      position: absolute;
+
+      left: 256px;
+      top: 80px;
+
+      @media (max-width: $minDesktop) {
+        left: 74px;
+        top: 35px;
+      }
+
+      @media (max-width: $minTablet) {
+        position: static;
+      }
+    }
+
+    &-title {
+      margin-bottom: 28px;
+
+      color: $black;
+
+      @media (max-width: $minDesktop) {
+        max-width: 525px;
+
+        margin-bottom: 34px;
+        font-size: 85px;
+      }
+
+      @media (max-width: $minTablet) {
+        font-size: 36px;
+        margin-bottom: 26px;
+        margin-left: -2px;
+      }
+    }
+
+    &-subtitle {
+      max-width: 525px;
+
+      margin-left: 9px;
+      margin-bottom: 26px;
+
+      color: $black;
+
+      @media (max-width: $minDesktop) {
+        margin-bottom: 26px;
+      }
+
+      @media (max-width: $minTablet) {
+        margin-left: 0;
+        margin-bottom: 23px;
+      }
+    }
+
+    &-text {
+      display: block;
+
+      margin-left: 9px;
+      margin-bottom: 15px;
+
+      color: $black;
+
+      @media (max-width: $minDesktop) {
+        margin-bottom: 37px;
+      }
+
+      @media (max-width: $minTablet) {
+        margin-bottom: 20px;
+        margin-left: 0;
+      }
+    }
+
+    &-btn-wrapper {
+      .slider__button {
+        position: relative;
+        opacity: 1;
+
+        margin-left: 9px;
+        margin-top: 52px;
+
+        top: 0;
+        left: 0;
+
+        &:after {
+          background-color: $white;
+        }
+
+        span {
+          color: $black;
+        }
+
+        @media (max-width: $minTablet) {
+          margin-top: 28px;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  // WHAT SECTION
+  .what__cities {
+    .what__desc,
+    .what__desc-reverse {
+      .hidden_paragraphs {
+        margin-bottom: 0;
+
+        position: relative;
+        overflow: hidden;
+
+        height: 93px;
+        -webkit-transition: height 0.4s ease;
+        -moz-transition: height 0.4s ease;
+        -o-transition: height 0.4s ease;
+        transition: height 0.4s ease;
+
+        &.hidden {
+          &:after {
+            display: none;
+          }
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+
+          top: 0;
+          left: 0;
+
+          width: 100%;
+          height: 100%;
+
+          background: linear-gradient(to top, white 0%, white 10%, rgba(255, 255, 255, 0.7) 100%);
+        }
+      }
+      p {
+        margin-bottom: 25px;
+        font-family: $Reg;
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 400;
+        color: $black;
+
+        @media (max-width: $minTablet) {
+          margin-bottom: 17px;
+        }
+      }
+      .collapsible__text > p {
+        &:only-of-type {
+          height: 100%;
+          overflow: visible;
+          &:after {
+            display: none;
+          }
+
+          + span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  // FUNCTIONALITY SECTION
+  .functionality__cities {
+    background-color: #f0f0f0;
+
+    .container {
+      padding: 156px 0 54px 146px;
+
+      @media (max-width: $minDesktop) {
+        min-height: 100%;
+
+        padding: 0 40px;
+        overflow: visible;
+      }
+
+      @media (max-width: $minTablet) {
+        padding: 0;
+      }
+
+      .functionality__slider-controls-slide1 {
+        left: -92px;
+        @media (max-width: $minDesktop) {
+          left: -41px;
+        }
+      }
+      .functionality__slider-controls-slide2 {
+        left: -143px;
+        @media (max-width: $minDesktop) {
+          left: -108px;
+        }
+      }
+      .page-number__line {
+        background-color: #e2e2e2;
+      }
+      .page-number__square {
+        border-color: #e2e2e2;
+        background-color: #f0f0f0;
+      }
+    }
+
+    .functionality__stripe {
+      background-color: #ffe60b;
+    }
+
+    .functionality__desc {
+      .hidden_paragraphs {
+        margin-bottom: 0;
+
+        position: relative;
+        overflow: hidden;
+
+        height: 141px;
+        -webkit-transition: height 0.4s ease;
+        -moz-transition: height 0.4s ease;
+        -o-transition: height 0.4s ease;
+        transition: height 0.4s ease;
+
+        &.hidden {
+          &:after {
+            display: none;
+          }
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+
+          top: 0;
+          left: 0;
+
+          width: 100%;
+          height: 100%;
+
+          background: linear-gradient(to top, #f0f0f0 0%, #f0f0f0 10%, rgba(240, 240, 240, 0.7) 100%);
+        }
+      }
+      p {
+        margin-bottom: 25px;
+        font-family: $Reg;
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 400;
+        color: $black;
+      }
+      .collapsible__text > p {
+        &:only-of-type {
+          height: 100%;
+          overflow: visible;
+          &:after {
+            display: none;
+          }
+          + span {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .functionality__text {
+      &-hidden {
+        &-btn {
+          position: absolute;
+          z-index: 1;
+
+          bottom: 27px;
+          left: 0;
+
+          font-family: $Bold;
+          font-size: 13px;
+          text-transform: uppercase;
+
+          color: $black;
+          cursor: pointer;
+          transition: 0.4s;
+          opacity: 1;
+          visibility: visible;
+
+          @media (min-width: $desktop) {
+            &:hover {
+              &:after {
+                transform: rotate(90deg);
+                transform-origin: 50% 0;
+              }
+            }
+          }
+
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+
+            top: 50%;
+            right: -33px;
+            transform: translateY(-50%);
+
+            width: 15px;
+            height: 5px;
+
+            background-color: #ffe60b;
+            transition: 0.4s;
+          }
+        }
+      }
+    }
+  }
+}

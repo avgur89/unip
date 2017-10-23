@@ -1,0 +1,12 @@
+//- join section(e.g. Home page -> 7th section)
+mixin joinSection()
+    section.join#join-section
+        .join__bg: img(src='img/join.jpg')
+        .fixed-width-1280
+            +bottomButton('go up', 'bottomBtn--white upBtn')
+            .join__inner
+                .join__subtitle so, what do you think
+                .join__title Want to join us?
+                .join__buttons
+                    +btn('btn--yellow join__button', 'apple')
+                    +btn('btn--yellow join__button', 'android')

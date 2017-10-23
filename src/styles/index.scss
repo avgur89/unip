@@ -1,0 +1,35 @@
+/* PARTIALS */
+@import 'partials/_mixins';
+@import 'partials/_variables';
+@import 'partials/_fonts';
+@import 'partials/_keyframes';
+@import 'partials/_svg';
+@import 'partials/_helpers';
+
+/* LIBS */
+@import 'libs/vintage-reset-normalize';
+@import 'libs/perfect-scrollbar';
+@import '../../node_modules/materialize-css/sass/components/carousel';
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+//@import '../../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar';
+
+/* COMPONENTS */
+@import 'components/common';
+@import 'components/common.components';
+@import 'components/animate';
+@import 'components/preloader';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/sections';
+@import 'components/overlay';
+@import 'components/what';
+@import 'components/functionality';
+@import 'components/join_us';
+
+/* PAGES */
+@import 'pages/home';
+@import 'pages/drivers';
+@import 'pages/private';
+@import 'pages/municipality';
+@import 'pages/about';
+@import 'pages/contacts';

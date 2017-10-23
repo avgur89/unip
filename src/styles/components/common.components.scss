@@ -1,0 +1,349 @@
+// HEADERS
+.h1 {
+  font-family: $Light;
+  font-size: 110px;
+  font-weight: 300;
+
+  @media (max-width: $minDesktop) {
+    font-size: 78px;
+  }
+
+  @media (max-width: $minTablet) {
+    font-size: 36px;
+  }
+}
+
+.h2 {
+  font-family: $Light;
+  font-size: 46px;
+  line-height: 55px;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+
+  @media (max-width: $minTablet) {
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: 0.5px;
+  }
+}
+
+.regular {
+  font-family: $Reg;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: $black;
+
+  @media (max-width: $minTablet) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  &-small {
+    font-family: $Reg;
+    font-size: 13px;
+    line-height: 21px;
+    font-weight: 400;
+    color: $black;
+  }
+}
+// HEADERS END
+
+// TEXT BLOCK (small)
+.textBlock {
+  position: absolute;
+
+  top: 26vh;
+  left: 145px;
+
+  padding-top: 13px;
+
+  color: black;
+
+  z-index: 2;
+
+  @media (max-width: $minDesktop) {
+    top: 121px;
+    left: 39px;
+
+    .textBlock__item-small,
+    .textBlock__item-big,
+    .textBlock__pagination {
+      opacity: 1;
+
+      transform: translate3d(0, 0, 0);
+    }
+
+    .textBlock__item-big {
+      > span {
+        &:before, &:after {
+          height: 15px;
+        }
+
+        span {
+          width: calc(100% + 20px);
+        }
+      }
+    }
+  }
+
+  &.js-animation-finished {
+    .textBlock__item-small,
+    .textBlock__item-big,
+    .textBlock__pagination {
+      opacity: 1;
+
+      transform: translate3d(0, 0, 0);
+    }
+
+    .textBlock__item-big {
+      > span {
+        &:before, &:after {
+          height: 15px;
+        }
+
+        span {
+          width: calc(100% + 20px);
+        }
+      }
+    }
+  }
+
+  &.js-ie-fix {
+    .textBlock__item-big {
+      > span {
+        &:before, &:after {
+          height: 15px;
+        }
+
+        span {
+          width: calc(100% + 20px);
+        }
+      }
+    }
+  }
+
+  &__item-small {
+    font-family: $Reg;
+    font-size: 13px;
+    line-height: 21px;
+
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+    transition: all 1s ease;
+  }
+
+  &__item-big {
+    margin-top: 10px;
+
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+    transition: all 1s ease .3s;
+
+    > span {
+      position: relative;
+      display: inline-block;
+
+      margin: 0 10px;
+
+      &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+
+        width: 5px;
+        height: 0;
+
+        background-color: $headerBG;
+      }
+
+      &:before {
+        top: 44px;
+        left: -5px;
+
+        transition: height .3s ease 1.2s;
+      }
+
+      &:after {
+        bottom: -4px;
+        right: -15px;
+
+        transition: height .3s ease 2.1s;
+      }
+
+      span {
+        position: absolute;
+
+        top: calc(100% + 4px);
+        left: -5px;
+
+        width: 0;
+        height: 5px;
+
+        background-color: $headerBG;
+
+        transition: width 0.6s ease 1.5s;
+      }
+    }
+  }
+
+  &__pagination {
+    margin-top: 25px;
+
+    color: black;
+    font-family: $Bold;
+    font-size: 13px;
+
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+    transition: all 1s ease .6s;
+
+    @media (max-width: $minTablet) {
+      display: none;
+    }
+
+    &-item {
+      position: relative;
+      display: inline-block;
+
+      padding-left: 12px;
+
+      cursor: pointer;
+
+      &.js-active {
+        &:before {
+          height: 15px;
+        }
+      }
+
+      @media (min-width: $desktop) {
+        &:hover {
+          &:before {
+            height: 15px;
+          }
+        }
+      }
+
+      &:not(:first-child) {
+        margin-left: 24px;
+      }
+
+      &:before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+
+        width: 5px;
+        height: 0;
+
+        left: 0;
+        bottom: 0;
+
+        background-color: $yellowBG;
+
+        transition: height .4s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    }
+  }
+}
+// TEXT BLOCK (small) END
+
+// BUTTON
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #010101;
+  font-family: $Bold;
+  line-height: 16px;
+  text-decoration: none;
+
+  &.js-ie-fix {
+    span {
+      transition: none;
+    }
+  }
+
+  svg {
+    fill: #010101;
+
+    transition: fill .5s ease;
+  }
+
+  span {
+    transition: color .5s ease;
+  }
+
+  &--yellow {
+    width: 194px;
+    height: 70px;
+
+    background-color: $yellowBG;
+
+    font-size: 16px;
+
+    @media (min-width: $desktop) {
+      &:hover {
+        svg {
+          fill: white;
+        }
+        span {
+          color: white;
+        }
+      }
+    }
+
+    .icon-icon_apple  {
+      width: 27px;
+      height: 32px;
+    }
+
+    .icon-icon_google_paly {
+      width: 26px;
+      height: 29px;
+    }
+
+    span {
+      margin-left: 17px;
+    }
+  }
+
+  &--white {
+    width: 167px;
+    height: 50px;
+
+    background-color: white;
+
+    font-size: 13px;
+
+    @media (min-width: $desktop) {
+      &:hover {
+        svg {
+          fill: $yellowBG;
+        }
+        span {
+          color: $yellowBG;
+        }
+      }
+    }
+
+    .icon-icon_apple  {
+      width: 20px;
+      height: 23px;
+    }
+
+    .icon-icon_google_paly {
+      width: 18px;
+      height: 20px;
+    }
+
+    span {
+      margin-left: 14px;
+    }
+  }
+
+  &:not(:first-child) {
+    margin-left: 20px;
+  }
+}
+// BUTTON END

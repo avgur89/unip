@@ -1,0 +1,37 @@
+extends ../extend/default
+
+block variables
+    -
+        var title = 'Unip';
+        var hasPreloader = true;
+block footer
+    //- clear block
+block main
+    main(data-page='home')
+
+        // pages progress-bar (fixed)
+        +fixedProgressBar()
+
+        // first section
+        +introSection()
+
+        // second section
+        +slider3dSection()
+
+        // third section
+        +previewSection()
+
+        // fourth section
+        +sliderSection()
+
+        // fifth section
+        +canvasSection()
+
+        // scrolling-inside-div
+        #scrollInside.js-perfect-scrollbar
+
+            // sixth section
+            +joinSection()
+
+            // footer
+            +footer()

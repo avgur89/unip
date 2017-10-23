@@ -1,0 +1,50 @@
+//- preview section(e.g. Home page -> 3rd section)
+-
+    var previewSubtitle = 'try to use it';
+    var previewSlides = 5;
+mixin previewSection()
+    section.preview#preview-section
+        .fixed-width-1280
+            +pageNumber(2)
+            +bottomButton('skip')
+            +textBlock(previewSubtitle, 2, previewSlides)
+            .preview__container.js-slide-1.js-is-hidden-for-animation
+                .preview__backdrop
+                    .preview__images
+                        .preview__image.preview__image--1
+                            img(src = 'img/preview-1.png')
+                        .preview__image.preview__image--2
+                            img(src = 'img/carousel-1.png')
+                        .preview__image.preview__image--3
+                            img(src = 'img/join.jpg')
+                        .preview__image.preview__image--4
+                            img(src = 'img/preview-1.png')
+                        .preview__image.preview__image--5
+                            img(src = 'img/carousel-1.png')
+                        .preview__image.preview__image--6
+                            img(src = 'img/join.jpg')
+                        .preview__image.preview__image--7
+                            img(src = 'img/preview-1.png')
+                    .preview__texts
+                        .preview__text.preview__text--1
+                            span With real time occupancy information there is no need to cruise around searching for parking space. UnIP’s App displays parking availability on your digital map
+                        .preview__text.preview__text--2
+                            span User friendly navigation offers multiple choice of parking spaces based on price or distance to your point of interest. We will calculate optimal itinarary to the parking of your preference and then to your final destination
+                        .preview__text.preview__text--3
+                            span Upon set up of account you are connected to the preferred payment channel: Credit Card, PayPal, ApplePay, GooglePay. The parking service can be payed on pre-paid, post-paid or transaction-based principle
+                        .preview__text.preview__text--4
+                            span Automatic control over parking session helps you to avoid unwanted fines. Push notifications remind you well in advance about status of your current session or any bad events on the road close to you
+                        .preview__text.preview__text--5
+                            span With real time occupancy information there is no need to cruise around searching for parking space. UnIP’s App displays parking availability on your digital map
+                .preview__lines.js-is-hidden-for-animation
+                    .preview__line.preview__line--1
+                    .preview__line.preview__line--2
+                    .preview__line.preview__line--3
+                    .preview__line.preview__line--4
+                    .preview__line.preview__line--5
+                .preview__main.carousel
+                    .carousel-item.active: img(src='img/preview-1.png')
+                    .carousel-item: img(src='img/carousel-1.png')
+                    .carousel-item: img(src='img/join.jpg')
+                    .carousel-item: img(src='img/preview-1.png')
+                    .carousel-item: img(src='img/carousel-1.png')

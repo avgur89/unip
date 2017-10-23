@@ -1,0 +1,32 @@
+//- 3d slider section(e.g. Home page -> 2nd section)
+-
+    var slider3dSubtitle = 'with UNIP';
+    var slider3dSlides = 4;
+mixin slider3dSection()
+    section.slider3d#slider3d-section
+        .fixed-width-1280
+            +pageNumber(1)
+            +bottomButton('skip')
+            +textBlock(slider3dSubtitle, 1, slider3dSlides)
+            .slider3d__container.js-slide-1
+                .slider3d__carousel.carousel
+                    .carousel-item
+                        img.backdrop(src='img/carousel-1.png')
+                        img.view(src='img/carousel-1.png')
+                    .carousel-item
+                        img.backdrop(src='img/carousel-1.png')
+                        img.view(src='img/carousel-1.png')
+                    .carousel-item
+                        img.backdrop(src='img/carousel-1.png')
+                        img.view(src='img/carousel-1.png')
+                    .carousel-item
+                        img.backdrop(src='img/carousel-1.png')
+                        img.view(src='img/carousel-1.png')
+                .slider3d__overlay
+                    .slider3d__overlay-circle.slider3d__overlay-circle--big
+                    .slider3d__overlay-circle.slider3d__overlay-circle--medium
+                .slider3d__text
+                    .slider3d__text-item: span Tell us where to go and we will tell you where to park. We will optimally drive you to the parking of your preference and to your final destination point
+                    .slider3d__text-item: span UNIP delivers detailed information about every parking lot on city map straight to your mobile phone
+                    .slider3d__text-item: span Simple and convenient payment with just two taps on your mobile phone. With various payment methods supported you can say NO to coins
+                    .slider3d__text-item: span We take care of your time: extend your parking session remotely. You will get notice early enough to return to your car and avoid fines

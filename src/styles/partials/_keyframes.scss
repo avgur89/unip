@@ -1,0 +1,37 @@
+@keyframes preloaderRight {
+  0% {
+    transform: translateZ(0) translateX(0) translateX(0);
+  }
+
+  100% {
+    transform: translateZ(0) translateX(100vw) translateX(-100%);
+  }
+}
+
+@keyframes preloaderLeft {
+  0% {
+    transform: translateZ(0) translateX(0) translateX(0);
+  }
+
+  100% {
+    transform: translateZ(0) translateX(100%) translateX(-100vw);
+  }
+}
+
+@keyframes circleAnimation {
+  from {
+    opacity: 0.3;
+
+    border-width: 3px;
+
+    transform: translate3d(-50%, -44%, 0) scale(0);
+  }
+
+  to {
+    opacity: 0;
+
+    border-width: 1px;
+
+    transform: translate3d(-50%, -20%, 0) scale(1);
+  }
+}

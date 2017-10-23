@@ -1,0 +1,18 @@
+//- Intro section component (e.g. Home page -> 1st section)
+-
+    var defaultCirclesCount = 5;
+    var defaultTitle = 'every car trip begins and ends in a parking space'.split(' ');
+mixin introSection()
+    section.intro#intro-section
+        .intro__background
+            img(src='img/intro-map.png')
+        .fixed-width-1280
+            .intro__animation
+                .intro__pin
+                - for (var i = 1; i <= defaultCirclesCount; i++) {
+                .intro__circle(class = 'intro__circle--' + i)
+                - }
+            .intro__title.h1
+                each word in defaultTitle
+                    div: span #{word}
+            +bottomButton('learn more')

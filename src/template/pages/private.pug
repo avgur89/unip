@@ -1,0 +1,187 @@
+extends ../extend/default
+
+block variables
+    -
+        var title = 'Unip';
+        var hasPreloader = false;
+block footer
+    //- clear block
+block main
+    main(data-page='private')
+        .push-cnt
+        // Progress bar section
+        .progress-bar.progress-bar--white.animate-top-first
+            .progress-bar__inner
+                .progress-bar__current 01
+                .progress-bar__total 03
+                .progress-bar__bar
+                .progress-bar__pages
+                    .progress-bar__pages-page(data-section='3'): span 03
+                    .progress-bar__pages-page(data-section='2'): span 02
+                    .progress-bar__pages-page(data-section='1'): span 01
+
+        // CALL TO ACTION SECTION
+        section.private__cta(data-scrollTo="1" style="background-image: url('img/private-cta.jpg')")
+            .container
+                .page-number
+                    .page-number__line.animate-fade-line
+                    .page-number__container.animate-top-first
+                        .page-number__square
+                        .page-number__number.regular-small 01
+
+                .private__cta-desc.animate-fade-first
+                    .private__cta-text.regular-small about
+                    h1.private__cta-title.h1(data-progress="1" data-white="true") Private operators
+                    .private__cta-subtitle.regular: p UNIP helps private parking operators to achieve the more efficient occupancy with better revenues and to improve the service that automatically raise the customers loyalty
+                    .private__cta-btn-wrapper
+                        a.slider__button(href = '#!'): span register now
+
+        // WHAT AND WHY SECTION
+        section.what(data-scrollTo="2" data-progress="2")
+            .container
+                .page-number
+                    .page-number__line.animate-fade-in
+                    .page-number__container.animate-top
+                        .page-number__square
+                        .page-number__number.regular-small 02
+
+                .what__item.animate-fade-up
+                    .what__title
+                        .what__subtitle.regular-small what & why
+                        h2.h2.what__title-text
+                            p what is <strong>important</strong> about private parking?
+                    .what__img-wrapper
+                        img(class="what__img" src="img/private-what1.jpg")
+                    .what__desc
+                        .what__desc-stripe.animate-delimeter-height
+                        .collapsible__text
+                            p Most municipalities do not analyse the real-time parking occupancy and do not charge the parking price respectively. It is considered that the higher occupancy leads to higher revenues that cities use to subsidize public services.
+                            span.what__desc-hidden-btn show more
+
+                .what__item.what__item-reverse.animate-fade-up
+                    .what__item-reverse-stripe.animate-delimeter-width
+                    .what__desc-reverse
+                        .collapsible__text
+                            p UnIP is the new generation parking management Platform.
+                            p Most municipalities do not analyse the real-time parking occupancy and do not charge the parking price respectively. It is considered that the higher occupancy leads to higher revenues that cities use to subsidize public services.
+                            span.what__desc-hidden-btn show more
+                    .what__img-wrapper
+                        img(class="what__img" src="img/private-what2.jpg")
+                    .h2.h2.what__title-reverse.what__title-top
+                        .what__title-text
+                            p What is our <strong>main goal?</strong>
+
+                .what__item.animate-fade-up
+                    .what__title.what__title-top
+                        h2.h2.what__title-text
+                            p Why do you <strong>need UnIP?</strong>
+                    .what__img-wrapper
+                        img(class="what__img" src="img/private-what3.jpg")
+                    .what__desc
+                        .what__desc-stripe.animate-delimeter-height
+                        .collapsible__text
+                            p Most municipalities do not analyse the real-time parking occupancy and do not charge the parking price respectively. It is considered that the higher occupancy leads to higher revenues that cities use to subsidize public services.
+                            p UnIP is the new generation parking management Platform.
+                            p UnIP is the new generation parking management Platform. p UnIP is the new generation parking management Platform.
+                            span.what__desc-hidden-btn show more
+
+        // FUNCTIONALITY SECTION
+        section.functionality.functionality__private(data-section="functionality" data-scrollTo="3" data-progress="3")
+            .container
+                .page-number
+                    .page-number__line.animate-fade-in
+                    .page-number__container.animate-top
+                        .page-number__square
+                        .page-number__number.regular-small 03
+
+                .functionality__subtitle.regular-small.animate-fade-up functionality
+                .functionality__desc-wrapper.animate-fade-up
+                    .functionality__desc.functionality__desc-active(data-desc="slide-1")
+                        h2.h2.functionality__title Better service - higher loyalty
+                        .functionality__stripe
+                        .functionality__text.regular.collapsible__text
+                            p By raising parking service quality you can get more customers willing to park their cars on available parking space in shortest time. We can improve parking service by convenient payment procudre, reservation service, navigation to the point of interest and back to parking place, automatic notification on service costs or promotions.
+                            span.functionality__text-hidden-btn show more
+                    .functionality__desc(data-desc="slide-2")
+                        h2.h2.functionality__title Revenue management
+                        .functionality__stripe
+                        .functionality__text.regular.collapsible__text
+                            p Any item of city parking infrastructure like on-streets sites or spaces, garages, gates, EV charges can be integrated, classified and customised by an asset owner. The municipality can integrate any elaborated business logic based on variable price depending on time of the day, day of the week, specific event, customer or assets class, duration of parking or other. Any asset item can be identified with unique ID tag. Any parking space or site has GPS coordinates and up-to-date street view.
+                            p By raising parking service quality you can get more customers willing to park their cars on available parking space in shortest time. We can improve parking service by convenient payment procudre, reservation service, navigation to the point of interest and back to parking place, automatic notification on service costs or promotions.
+                            span.functionality__text-hidden-btn show more
+                    .functionality__desc(data-desc="slide-3")
+                        h2.h2.functionality__title Convenient payment - easy parking
+                        .functionality__stripe
+                        .functionality__text.regular.collapsible__text
+                            p Any item of city parking infrastructure like on-streets sites or spaces, garages, gates, EV charges can be integrated, classified and customised by an asset owner. The municipality can integrate any elaborated business logic based on variable price depending on time of the day, day of the week, specific event, customer or assets class, duration of parking or other. Any asset item can be identified with unique ID tag. Any parking space or site has GPS coordinates and up-to-date street view.
+                            p By raising parking service quality you can get more customers willing to park their cars on available parking space in shortest time. We can improve parking service by convenient payment procudre, reservation service, navigation to the point of interest and back to parking place, automatic notification on service costs or promotions.
+                            span.functionality__text-hidden-btn show more
+                    .functionality__desc(data-desc="slide-4")
+                        h2.h2.functionality__title Assets management
+                        .functionality__stripe
+                        .functionality__text.regular.collapsible__text
+                            p Any item of city parking infrastructure like on-streets sites or spaces, garages, gates, EV charges can be integrated, classified and customised by an asset owner. The municipality can integrate any elaborated business logic based on variable price depending on time of the day, day of the week, specific event, customer or assets class, duration of parking or other. Any asset item can be identified with unique ID tag. Any parking space or site has GPS coordinates and up-to-date street view.
+                            p By raising parking service quality you can get more customers willing to park their cars on available parking space in shortest time. We can improve parking service by convenient payment procudre, reservation service, navigation to the point of interest and back to parking place, automatic notification on service costs or promotions.
+                            span.functionality__text-hidden-btn show more
+                    .functionality__desc(data-desc="slide-5")
+                        h2.h2.functionality__title Occupancy
+                        .functionality__stripe
+                        .functionality__text.regular.collapsible__text
+                            p Any item of city parking infrastructure like on-streets sites or spaces, garages, gates, EV charges can be integrated, classified and customised by an asset owner. The municipality can integrate any elaborated business logic based on variable price depending on time of the day, day of the week, specific event, customer or assets class, duration of parking or other. Any asset item can be identified with unique ID tag. Any parking space or site has GPS coordinates and up-to-date street view.
+                            p Any item of city parking infrastructure like on-streets sites or spaces, garages, gates, EV charges can be integrated, classified and customised by an asset owner. The municipality can integrate any elaborated business logic based on variable price depending on time of the day, day of the week, specific event, customer or assets class, duration of parking or other. Any asset item can be identified with unique ID tag. Any parking space or site has GPS coordinates and up-to-date street view.
+                            p By raising parking service quality you can get more customers willing to park their cars on available parking space in shortest time. We can improve parking service by convenient payment procudre, reservation service, navigation to the point of interest and back to parking place, automatic notification on service costs or promotions.
+                            span.functionality__text-hidden-btn show more
+
+                .functionality__slider-wrapper.animate-fade-up
+                    .functionality__slider-controls.functionality__slider-controls-slide1.functionality__slider-controls-active.regular-small(data-control="slide-1") better service - higher loyalty
+                    .functionality__slider-controls.functionality__slider-controls-slide2.regular-small(data-control="slide-2") revenue management
+                    .functionality__slider-controls.functionality__slider-controls-slide3.regular-small(data-control="slide-3") convenient payment - easy parking
+                    .functionality__slider-controls.functionality__slider-controls-slide4.regular-small(data-control="slide-4") assets management
+                    .functionality__slider-controls.functionality__slider-controls-slide5.regular-small(data-control="slide-5") occupancy
+                    .functionality__slider
+                        .functionality__slider-item.functionality__slider-item-active(data-slide="slide-1"): img(class="functionality__slider-img" src="img/googlemap-1.png")
+                        .functionality__slider-item(data-slide="slide-2"): img(class="functionality__slider-img" src="img/get-app.jpg")
+                        .functionality__slider-item(data-slide="slide-3"): img(class="functionality__slider-img" src="img/slider-item.png")
+                        .functionality__slider-item(data-slide="slide-4"): img(class="functionality__slider-img" src="img/intro-map.png")
+                        .functionality__slider-item(data-slide="slide-5"): img(class="functionality__slider-img" src="img/join.jpg")
+
+                .functionality__slider-mobile-wrapper
+                    .functionality__slider-mobile-subtitle.regular-small functionality
+                    .functionality__slider-mobile-line
+                        .functionality__slider-mobile-line-stripe
+                        span.regular-small swipe
+                        .functionality__slider-mobile-square-big
+                        .functionality__slider-mobile-square-small
+                    .functionality__slider-mobile
+                        .functionality__slider-mobile-item
+                            .functionality__slider-mobile-title.h2 Better service - higher loyalty
+                            .functionality__slider-mobile-stripe
+                            .functionality__slider-mobile-text.regular: p The Platform enables to integrate the customised city parking environment containing each item of assets with its specific features. Complete parking database with dynamic prices, multiple conditions, city zones, detailed city map can be created.
+                            .functionality__slider-mobile-text.regular: p Any item of city parking infrastructure like on-streets sites or spaces, garages, gates, EV charges can be integrated, classified and customised by an asset owner. The municipality can integrate any elaborated business logic based on variable price depending on time of the day, day of the week, specific event, customer or assets class, duration of parking or other. Any asset item can be identified with unique ID tag. Any parking space or site has GPS coordinates and up-to-date street view.
+                        .functionality__slider-mobile-item
+                            .functionality__slider-mobile-title.h2 Revenue management
+                            .functionality__slider-mobile-stripe
+                            .functionality__slider-mobile-text.regular: p The Platform enables to integrate the customised city parking environment containing each item of assets with its specific features. Complete parking database with dynamic prices, multiple conditions, city zones, detailed city map can be created.
+                            .functionality__slider-mobile-text.regular: p Any item of city parking infrastructure like on-streets sites or spaces, garages, gates, EV charges can be integrated, classified and customised by an asset owner. The municipality can integrate any elaborated business logic based on variable price depending on time of the day, day of the week, specific event, customer or assets class, duration of parking or other. Any asset item can be identified with unique ID tag. Any parking space or site has GPS coordinates and up-to-date street view.
+                        .functionality__slider-mobile-item
+                            .functionality__slider-mobile-title.h2 Convenient payment - easy parking
+                            .functionality__slider-mobile-stripe
+                            .functionality__slider-mobile-text.regular: p The Platform enables to integrate the customised city parking environment containing each item of assets with its specific features. Complete parking database with dynamic prices, multiple conditions, city zones, detailed city map can be created.
+                            .functionality__slider-mobile-text.regular: p Any item of city parking infrastructure like on-streets sites or spaces, garages, gates, EV charges can be integrated, classified and customised by an asset owner. The municipality can integrate any elaborated business logic based on variable price depending on time of the day, day of the week, specific event, customer or assets class, duration of parking or other. Any asset item can be identified with unique ID tag. Any parking space or site has GPS coordinates and up-to-date street view.
+                        .functionality__slider-mobile-item
+                            .functionality__slider-mobile-title.h2 Assets management
+                            .functionality__slider-mobile-stripe
+                            .functionality__slider-mobile-text.regular: p The Platform enables to integrate the customised city parking environment containing each item of assets with its specific features. Complete parking database with dynamic prices, multiple conditions, city zones, detailed city map can be created.
+                            .functionality__slider-mobile-text.regular: p Any item of city parking infrastructure like on-streets sites or spaces, garages, gates, EV charges can be integrated, classified and customised by an asset owner. The municipality can integrate any elaborated business logic based on variable price depending on time of the day, day of the week, specific event, customer or assets class, duration of parking or other. Any asset item can be identified with unique ID tag. Any parking space or site has GPS coordinates and up-to-date street view.
+                        .functionality__slider-mobile-item
+                            .functionality__slider-mobile-title.h2 Occupancy
+                            .functionality__slider-mobile-stripe
+                            .functionality__slider-mobile-text.regular: p The Platform enables to integrate the customised city parking environment containing each item of assets with its specific features. Complete parking database with dynamic prices, multiple conditions, city zones, detailed city map can be created.
+                            .functionality__slider-mobile-text.regular: p Any item of city parking infrastructure like on-streets sites or spaces, garages, gates, EV charges can be integrated, classified and customised by an asset owner. The municipality can integrate any elaborated business logic based on variable price depending on time of the day, day of the week, specific event, customer or assets class, duration of parking or other. Any asset item can be identified with unique ID tag. Any parking space or site has GPS coordinates and up-to-date street view.
+
+
+        // JOIN US SECTION
+        +join_us()
+
+        // Footer section
+        +footer()

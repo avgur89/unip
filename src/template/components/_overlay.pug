@@ -1,0 +1,33 @@
+//- Page number overlay item (on the main page's left side)
+mixin pageNumber(number)
+    .pageNumber
+        .pageNumber__line
+        .pageNumber__container
+            .pageNumber__square
+            .pageNumber__number 0#{number}
+
+mixin page-number(number)
+    .page-number
+        .page-number__line
+        .page-number__container
+            .page-number__square
+            .page-number__number.regular-small 0#{number}
+
+//- Bottom black-bar button (on almost each section's bottom)
+mixin bottomButton(text, className)
+    .bottomBtn(class = className || '')
+        .bottomBtn__line: span
+        .bottomBtn__text #{text}
+
+//- Fixed progress bar (on the maain page's right side)
+mixin fixedProgressBar()
+    .progressBar#progressBar.js-fixed
+        .progressBar__inner
+            .progressBar__current 01
+            .progressBar__total 04
+            .progressBar__bar
+            .progressBar__pages
+                .progressBar__pages-page(data-section='4'): span 04
+                .progressBar__pages-page(data-section='3'): span 03
+                .progressBar__pages-page(data-section='2'): span 02
+                .progressBar__pages-page(data-section='1'): span 01

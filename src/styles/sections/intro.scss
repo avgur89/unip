@@ -1,0 +1,379 @@
+.intro {
+  position: relative;
+
+  height: 100vh;
+  width: 100%;
+
+  overflow: hidden;
+
+  @media (max-width: $minDesktop) {
+    height: 600px;
+  }
+
+  @media (max-width: $minTablet) {
+    height: 473px;
+  }
+
+  &__background {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    user-select: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+
+      @include object-fit(cover);
+    }
+
+    &.js-animation-finished {
+      &:before {
+        opacity: 0.9;
+      }
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 100%;
+      height: 100%;
+
+      opacity: 1;
+
+      background-color: $yellowBG;
+
+      transition: opacity 3s linear;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    position: absolute;
+
+    left: 260px;
+    top: 50%;
+    transform: translateY(-50%) translateY(10px);
+
+    max-width: 875px;
+
+    color: white;
+
+    z-index: 1;
+
+    user-select: none;
+
+    @media (max-width: $minDesktop) {
+      left: 50%;
+
+      width: 650px;
+
+      transform: translate3d(calc(-50% + 27px), calc(-50% + 14px), 0);
+    }
+
+    @media (max-width: $minTablet) {
+      width: 275px;
+
+      transform: translate3d(calc(-50% + 17px), calc(-50% + 11px), 0);
+    }
+
+    &.js-animation-finished {
+      span {
+        transform: translateY(0);
+      }
+    }
+
+    div {
+      display: block;
+      float: left;
+
+      overflow: hidden;
+
+      max-height: 133px;
+
+      &:not(:last-of-type) {
+        margin-right: 26px;
+
+        @media (max-width: $minDesktop) {
+          margin-right: 19px;
+        }
+
+        @media (max-width: $minTablet) {
+          margin-right: 9px;
+        }
+      }
+
+      span {
+        display: inline-block;
+
+        transform: translateY(100%);
+
+        transition: transform 1.1s ease-in-out;
+      }
+    }
+  }
+
+  &__animation {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    left: 202px;
+    top: calc(50% - 45px);
+
+    background: transparent;
+
+    @media (max-width: $minDesktop) {
+      left: calc(50% - 339px);
+      top: calc(50% - 43px);
+
+      .intro__circle {
+        top: 13px;
+
+        transition: opacity 1s ease;
+        opacity: 0;
+      }
+
+      .intro__circle--1 {
+        display: none;
+      }
+    }
+
+    @media (max-width: $minTablet) {
+      left: calc(50% - 142px);
+      top: calc(50% - 4px);
+
+      .intro__circle {
+        top: -50px;
+      }
+    }
+
+    &.js-animation-finished {
+      .intro__circle--2 {
+        border-width: 3px;
+        opacity: 0.3;
+        transform: translate3d(-50%, -44%, 0) scale(0.15);
+      }
+      .intro__circle--3 {
+        border-width: 2px;
+        opacity: 0.2;
+        transform: translate3d(-50%, -38%, 0) scale(0.35);
+      }
+      .intro__circle--4 {
+        border-width: 2px;
+        opacity: 0.17;
+        transform: translate3d(-50%, -32%, 0) scale(0.55);
+      }
+      .intro__circle--5 {
+        border-width: 1px;
+        opacity: 0.09;
+        transform: translate3d(-50%, -26%, 0) scale(0.75);
+      }
+    }
+  }
+
+  &__circle {
+    position: absolute;
+
+    width: 1700px;
+    height: 950px;
+
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    border: 1px solid #857700;
+    border-radius: 50%;
+
+    opacity: 0;
+
+    transform-origin: center center;
+
+    will-change: border-width, opacity;
+
+    transform: translateZ(0);
+
+    &.js-animation-finished {
+      animation: circleAnimation 15s linear infinite;
+    }
+  }
+
+  &__pin {
+    position: absolute;
+
+    left: -3px;
+    top: 59px;
+
+    z-index: 2;
+
+    @media (max-width: $minTablet) {
+      left: -22px;
+      top: -6px;
+    }
+
+    &.js-animation-finished {
+      &:before {
+        transform: scale(1) rotate(45deg);
+      }
+    }
+
+    &.js-animation-finished-2 {
+      &:after {
+        width: 69px;
+
+        @media (max-width: $minDesktop) {
+          width: 40px;
+        }
+
+        @media (max-width: $minTablet) {
+          width: 28px;
+        }
+      }
+    }
+
+    &:before {
+      content: '';
+      display: block;
+
+      width: 7px;
+      height: 7px;
+
+      transform: scale(0) rotate(45deg);
+
+      background-color: #0a0c0a;
+
+      transition: transform 1s linear;
+
+      @media (max-width: $minTablet) {
+        display: none;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+
+      left: 23px;
+      top: 1px;
+
+      width: 0;
+      height: 5px;
+
+      background-color: #0a0c0a;
+
+      transition: width 1s ease;
+    }
+  }
+
+  &__more {
+    position: absolute;
+
+    right: -28px;
+    bottom: -17px;
+
+    cursor: pointer;
+
+    transform: rotate(-90deg) translate3d(-110px, 0, 0);
+    transform-origin: left top 0;
+
+    transition: transform 1s ease;
+
+    z-index: 2;
+
+    @media (min-width: $desktop) {
+      &:hover {
+        .intro__more-line {
+          span {
+            transform: translate3d(30px, 0, 0);
+          }
+        }
+      }
+    }
+
+    @media (max-width: $minDesktop) {
+      right: -45px;
+    }
+
+    @media (max-width: $minTablet) {
+      right: -65px;
+      bottom: -33px;
+    }
+
+    &.js-animation-finished {
+      transform: rotate(-90deg) translate3d(0, 0, 0);
+
+      .intro__more-text {
+        opacity: 1;
+      }
+    }
+
+    &-line {
+      position: relative;
+
+      display: inline-block;
+
+      width: 100px;
+      height: 5px;
+
+      background-color: transparent;
+
+      overflow: hidden;
+      
+      span {
+        position: absolute;
+
+        left: 0;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background-color: #0a0c0a;
+
+        transition: transform .5s ease;
+      }
+    }
+
+    &-text {
+      display: inline-block;
+
+      position: absolute;
+
+      left: calc(100% + 19px);
+      top: 4px;
+
+      color: black;
+      font-family: $Bold;
+      font-size: 13px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+
+      opacity: 0;
+
+      transition: all .6s ease 1s;
+
+      @media (max-width: $minDesktop) {
+        left: auto;
+        top: -10px;
+
+        right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,507 @@
+// PAGE NUMBER
+.pageNumber {
+  position: absolute;
+
+  left: 54px;
+  top: 0;
+
+  width: 1px;
+  height: 100%;
+
+  transform: translate3d(0, -100%, 0);
+
+  transition: transform 0.3s ease-in-out;
+
+  z-index: 2;
+
+  @media (max-width: $minDesktop) {
+    display: none;
+  }
+
+  &.js-animation-finished {
+    transform: translate3d(0, 0, 0);
+
+    .pageNumber__container {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &__line {
+    width: 1px;
+    height: 100%;
+
+    background-color: #e2e2e2;
+  }
+
+  &__container {
+    position: absolute;
+
+    left: -29px;
+    top: 26vh;
+
+    transform: translate3d(0, -250%, 0);
+
+    transition: transform 1.2s ease-in-out;
+  }
+
+  &__square {
+    width: 59px;
+    height: 59px;
+
+    border: 1px solid #e2e2e2;
+    background-color: #ffffff;
+
+    transform: rotate(45deg);
+    transform-origin: 49% 51%;
+  }
+
+  &__number {
+    position: absolute;
+
+    width: 100%;
+
+    left: 0;
+    top: 24px;
+
+    color: black;
+    font-family: $Bold;
+    font-size: 13px;
+    text-align: center;
+
+    z-index: 4;
+  }
+}
+
+// PAGE NUMBER END
+
+// BOTTOM BUTTON
+.bottomBtn {
+  position: absolute;
+
+  right: -28px;
+  bottom: -17px;
+
+  cursor: pointer;
+
+  transform: rotate(-90deg) translate3d(-110px, 0, 0);
+  transform-origin: left top 0;
+
+  transition: transform 1s ease;
+
+  z-index: 2;
+
+  &--white {
+    transform: rotate(-90deg) translate3d(0, 0, 0);
+
+    .bottomBtn {
+      &__line {
+        span {
+          background-color: white;
+        }
+      }
+      &__text {
+        color: white;
+        opacity: 1;
+      }
+    }
+  }
+
+  @media (min-width: $desktop) {
+    &:hover {
+      .bottomBtn__line {
+        span {
+          transform: translate3d(30px, 0, 0);
+        }
+      }
+    }
+  }
+
+  @media (max-width: $minDesktop) {
+    right: -45px;
+  }
+
+  @media (max-width: $minTablet) {
+    right: -65px;
+    bottom: -33px;
+  }
+
+  &.js-animation-finished {
+    transform: rotate(-90deg) translate3d(0, 0, 0);
+
+    .bottomBtn__text {
+      opacity: 1;
+    }
+  }
+
+  &__line {
+    position: relative;
+
+    display: inline-block;
+
+    width: 100px;
+    height: 5px;
+
+    background-color: transparent;
+
+    overflow: hidden;
+
+    span {
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background-color: #0a0c0a;
+
+      transition: transform .5s ease;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+
+    position: absolute;
+
+    left: calc(100% + 19px);
+    top: 4px;
+
+    color: black;
+    font-family: $Bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: all .6s ease 1s;
+
+    @media (max-width: $minDesktop) {
+      left: auto;
+      top: -10px;
+
+      right: 0;
+    }
+  }
+
+}
+
+// BOTTOM BUTTON END
+
+// FIXED PROGRESS BAR
+.progressBar {
+  position: absolute;
+
+  right: calc((100% - 1280px) / 2 + 60px);
+  top: 155vh;
+
+  width: 1px;
+  height: 200px;
+
+  background-color: #b4b4b4;
+
+  color: black;
+  font-family: $Bold;
+  font-size: 13px;
+  font-weight: 700;
+
+  z-index: 5;
+
+  opacity: 0;
+  transform: translate3d(0, calc(-50% + 50px), 0);
+  transition: transform 1s ease, opacity 1s ease, color .4s ease;
+
+  @media (max-width: $minDesktop) {
+    display: none;
+  }
+
+  &.js-background {
+    color: white;
+
+    .progressBar__bar {
+      background-color: white;
+    }
+  }
+
+  &.js-background-2 {
+    .progressBar__pages-page:hover {
+      background-color: white;
+    }
+  }
+
+  &.js-fixed {
+    position: fixed;
+    top: 55%;
+  }
+
+  &.js-animation-finished {
+    opacity: 1;
+    transform: translate3d(0, -50%, 0);
+  }
+
+  &__inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  &__pages {
+    position: absolute;
+
+    bottom: 0;
+    left: -2.5px;
+
+    width: 5px;
+    height: 100%;
+
+    &-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 25%;
+      width: 100%;
+
+      cursor: pointer;
+
+      transition: background-color .4s ease;
+
+      span {
+        display: block;
+
+        opacity: 0;
+
+        transform: rotate(-90deg);
+
+        transition: opacity .4s ease, transform .4s ease;
+      }
+
+      &:hover {
+        background-color: $yellowBG;
+
+        span {
+          opacity: 1;
+
+          transform: rotate(-90deg) translate3d(0, -10px, 0);
+        }
+      }
+    }
+  }
+
+  &__bar {
+    position: absolute;
+
+    bottom: 0;
+    left: -2.5px;
+
+    width: 5px;
+    height: 25%;
+
+    background-color: $light-black;
+
+    transition: height 1.2s ease-in-out, background-color .4s ease, height .8s ease .4s;
+  }
+
+  &__current {
+    position: absolute;
+
+    right: -8px;
+    bottom: -35px;
+
+    transform: rotate(-90deg);
+  }
+
+  &__total {
+    position: absolute;
+
+    left: -8px;
+    top: -35px;
+
+    transform: rotate(-90deg);
+  }
+}
+
+// FIXED PROGRESS BAR END
+
+// PAGE NUMBER SUBS START
+.page-number {
+  position: absolute;
+
+  left: 54px;
+  top: 0;
+
+  width: 1px;
+  height: 100%;
+
+  z-index: 1;
+
+  @media (max-width: $minDesktop) {
+    display: none;
+  }
+
+  &__line {
+    width: 1px;
+    height: 100%;
+
+    background-color: $brown;
+  }
+
+  &__container {
+    position: absolute;
+
+    left: -29px;
+    top: 61px;
+
+    z-index: 1;
+  }
+
+  &__square {
+    width: 59px;
+    height: 59px;
+
+    border: 1px solid $brown;
+
+    background-color: #f3d738;
+
+    transform: rotate(45deg);
+    transform-origin: 49% 51%;
+  }
+
+  &__number {
+    width: 100%;
+    position: absolute;
+
+    left: 0;
+    top: 20px;
+
+    color: black;
+    font-family: $Bold;
+    text-align: center;
+  }
+}
+
+// PAGE NUMBER SUBS END
+
+// PROGRESS BAR SUBS START
+.progress-bar {
+  position: fixed;
+  z-index: 5;
+
+  right: 56px;
+  top: 50%;
+
+  width: 1px;
+  height: 200px;
+
+  background-color: $light-black;
+  color: $black;
+
+  font-family: $Bold;
+  font-size: 13px;
+  font-weight: 700;
+
+  transform: translateY(-50%);
+  opacity: 1;
+
+  @media (max-width: $minDesktop) {
+    display: none;
+  }
+
+  &__pages-page:hover {
+    background-color: white;
+  }
+
+  &__inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  &__pages {
+    position: absolute;
+
+    bottom: 0;
+    left: -2.5px;
+
+    width: 5px;
+    height: 100%;
+
+    &-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 25%;
+      width: 100%;
+
+      cursor: pointer;
+      transition: background-color .4s ease;
+
+      span {
+        display: block;
+
+        transform: rotate(-90deg);
+        transition: opacity .4s ease, transform .4s ease;
+
+        opacity: 0;
+      }
+
+      &:hover {
+        background-color: $yellowBG;
+        span {
+          opacity: 1;
+          transform: rotate(-90deg) translate3d(0, -10px, 0);
+        }
+      }
+    }
+  }
+
+  &__bar {
+    position: absolute;
+
+    bottom: 0;
+    left: -2.5px;
+
+    width: 5px;
+    height: 25%;
+
+    background-color: $light-black;
+    transition: height 1.2s ease-in-out, background-color .4s ease, height .8s ease .4s;
+  }
+
+  &__current {
+    position: absolute;
+
+    right: -8px;
+    bottom: -35px;
+
+    transform: rotate(-90deg);
+  }
+
+  &__total {
+    position: absolute;
+
+    left: -8px;
+    top: -35px;
+
+    transform: rotate(-90deg);
+  }
+
+  &--white {
+    .progress-bar__current,
+    .progress-bar__total,
+    .progress-bar__pages-page {
+      color: $white;
+    }
+    .progress-bar__bar,
+    .progress-bar__inner {
+      background-color: $white;
+    }
+  }
+}
+
+// PROGRESS BAR SUBS END

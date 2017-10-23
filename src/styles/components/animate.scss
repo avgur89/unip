@@ -1,0 +1,25 @@
+.animate-fade-up,
+.animate-fade-in,
+.animate-top {
+  visibility: hidden;
+
+  @media (max-width: $minTablet) {
+    visibility: visible;
+  }
+}
+
+.what__item .animate-delimeter-width,
+.team__ceo-text .animate-delimeter-width {
+  //width: 0;
+  transform-origin: 0 0;
+
+  @media (max-width: $minTablet) {
+    width: 166px;
+  }
+}
+
+.what__item .animate-delimeter-height,
+.team__position .animate-delimeter-height,
+.contacts__item .animate-delimeter-height {
+  transform-origin: 50% bottom;
+}

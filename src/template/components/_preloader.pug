@@ -1,0 +1,105 @@
+-
+    function shuffle(array) {
+        var m = array.length, t, i;
+
+        // While there remain elements to shuffle…
+        while (m) {
+
+            // Pick a remaining element…
+            i = Math.floor(Math.random() * m--);
+
+            // And swap it with the current element.
+            t = array[m];
+            array[m] = array[i];
+            array[i] = t;
+        }
+
+        return array;
+    };
+    var words = [
+        'ends',
+        'trip',
+        'begins',
+        'a',
+        'car',
+        'in',
+        'every',
+        'and',
+        'parking',
+        'space',
+        'ends',
+        'trip',
+        'begins',
+        'ends',
+        'trip',
+        'begins',
+        'a',
+        'car',
+        'in',
+        'every',
+        'and',
+        'parking',
+        'space',
+        'ends',
+        'trip',
+        'begins',
+        'a',
+        'car',
+        'in',
+        'every',
+        'and',
+        'parking',
+        'ends',
+        'trip',
+        'begins',
+        'a',
+        'car',
+        'in',
+        'every',
+        'and',
+        'parking',
+        'space',
+        'ends',
+        'trip',
+        'begins',
+        'a',
+        'car',
+        'in',
+        'every',
+        'and',
+        'parking',
+        'space'
+    ];
+    var wordsLength = words.length, i;
+
+//- Website's preloader
+mixin preloader()
+    #preloader.preloader
+        .preloader__line.preloader__line--left
+            .preloader__line-inner
+                .preloader__text
+                    - var randomArray2 = shuffle(words);
+                    - for (i = 0; i < wordsLength; i++) {
+                        span #{randomArray2[i]}
+                    - }
+        .preloader__line.preloader__line--right
+            .preloader__line-inner
+                .preloader__text
+                    - var randomArray1 = shuffle(words);
+                    - for (i = 0; i < wordsLength; i++) {
+                        span #{randomArray1[i]}
+                    - }
+        .preloader__line.preloader__line--left
+            .preloader__line-inner
+                .preloader__text
+                    - var randomArray4 = shuffle(words);
+                    - for (i = 0; i < wordsLength; i++) {
+                        span #{randomArray4[i]}
+                    - }
+        .preloader__line.preloader__line--right
+            .preloader__line-inner
+                .preloader__text
+                    - var randomArray3 = shuffle(words);
+                    - for (i = 0; i < wordsLength; i++) {
+                        span #{randomArray3[i]}
+                    - }

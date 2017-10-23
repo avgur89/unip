@@ -1,0 +1,36 @@
+-
+    var headerLinks = [
+        'Drivers',
+        'Municipalities',
+        'Private operators' ,
+        'Investors',
+        'About us',
+        'contact us'
+    ];
+mixin header()
+    header#header.header
+        .header__inner
+            a.header__logo(href='#!'): img(src = 'img/logo-white.svg')
+            .header__menu
+                .header__links
+                    each link in headerLinks
+                        a.header__links-link(href='#!') #{link}
+                .header__actions
+                    .header__login.header__login--inner
+                        a(href="#!"): span log in
+                        +svg('icon_profile')
+                    .header__languages
+                        .header__languages-inner
+                            .header__languages-item.js-active en
+                            a.header__languages-item(href='#!') ru
+                            a.header__languages-item(href='#!') ua
+                            .header__languages-line
+            .header__login.header__login--outer
+                a(href="#!"): span log in
+                +svg('icon_profile')
+            .header__burger
+                .header__burger_inner
+                    .header__burger_line.line-1
+                    .header__burger_line.line-2
+                    .header__burger_line.line-3
+                    .header__burger_line.line-4

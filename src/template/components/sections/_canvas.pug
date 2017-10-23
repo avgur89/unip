@@ -1,0 +1,16 @@
+//- canvas section(e.g. Home page -> 6th section)
+- var canvasSubtitle = 'Why it is important?';
+mixin canvasSection()
+    section.canvas.js-perfect-scrollbar#canvas-section
+        .canvas__inner
+            .fixed-width-1280
+                +pageNumber(4)
+                +textBlock(canvasSubtitle, 4)
+                .canvas__threejs
+                    +svg('globe_outer')
+                .canvas__text
+                    .canvas__text-item.js-active More time and money for important things
+                    .canvas__text-item Better environment in your city. Less traffic - less polution
+                    .canvas__text-item Our technology consolidates interests of both Parking Owners and Drivers
+                    .canvas__text-item More safety - less accidents, free way for ambulance and firefighters
+                    .canvas__text-item Good "parking carma" for every driver.

@@ -1,0 +1,104 @@
+.preloader {
+  display: none;
+  position: fixed;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  z-index: 9999;
+
+  user-select: none;
+
+  &.js-animation-finished {
+    @media (max-width: $minDesktop) {
+      transition: opacity 0.8s linear;
+      opacity: 0;
+    }
+
+    .preloader__line {
+      box-shadow: none;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 25%;
+
+    background: $yellowBG;
+
+    box-shadow: 0 0 84px rgba(166, 74, 0, 0.14);
+
+    transition: box-shadow .4s linear;
+
+    overflow: hidden;
+
+    &-inner {
+      height: 100%;
+      width: 100%;
+
+      overflow: hidden;
+    }
+
+    .preloader__text {
+      transform-origin: 50% 0;
+      backface-visibility: hidden;
+      perspective: 1000px;
+
+      &.js-animation-finished {
+        animation: none;
+      }
+    }
+
+    &--left {
+      .preloader__text {
+        float: right;
+
+        animation-name: preloaderLeft;
+        animation-duration: 23s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    &--right {
+      .preloader__text {
+        float: left;
+
+        animation-name: preloaderRight;
+        animation-duration: 23s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  &__text {
+    display: inline-block;
+
+    margin-top: 1vh;
+
+    opacity: 0.8;
+    color: $dark-yellow;
+    font-family: $Light;
+    font-size: 17.3vh;
+    white-space: nowrap;
+    line-height: initial;
+
+    span {
+      margin-right: 2vw;
+
+      transition: color .7s linear;
+
+      &.js-active {
+        color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+mixin footer()
+    #footer.footer
+        .fixed-width-1280
+            .footer__logo
+                img(src = 'img/logo-black.svg')
+                span Copyright. Unip 2017
+            .footer__social
+                a(href = '#!', target = '_blank'): +svg('icon_in')
+                a(href = '#!', target = '_blank'): +svg('icon_twitter')
+                a(href = '#!', target = '_blank'): +svg('icon_insta')
+            .footer__center
+                .footer__links
+                    a(href = '#!') Drivers
+                    a(href = '#!') Municipalities
+                    a(href = '#!') Private operators
+                    a(href = '#!') Investors
+                    a(href = '#!') About us
+                    a(href = '#!') contact us
+                .footer__buttons
+                    +btn('btn--white footer__button', 'apple')
+                    +btn('btn--white footer__button', 'android')
+            a.footer__vintage(href = 'https://vintage.com.ua', target = '_blank')
+                span by
+                +svg('icon_logo_vintage')

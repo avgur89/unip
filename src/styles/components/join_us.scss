@@ -1,0 +1,146 @@
+// JOIN US SECTION
+.join-us {
+  position: relative;
+
+  width: 100%;
+  height: 487px;
+
+  @media (max-width: $minTablet) {
+    height: 351px;
+
+    padding-top: 41px;
+  }
+
+  .container {
+    height: 487px;
+
+    @media (max-width: $minTablet) {
+      height: 351px;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    &:before {
+      content: '';
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background-image: linear-gradient(to right, rgba(10, 12, 10, 0.6) 0%, rgba(10, 12, 10, 0) 100%);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+
+      @include object-fit(cover);
+    }
+  }
+
+  &__inner {
+    position: absolute;
+    z-index: 1;
+
+    top: 124px;
+    left: 144px;
+
+    @media (max-width: $minDesktop) {
+      top: 124px;
+      left: 40px;
+    }
+
+    @media (max-width: $minTablet) {
+      position: relative;
+
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 28px;
+
+    color: $white;
+
+    @media (max-width: $minTablet) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 58px;
+
+    color: $white;
+
+    @media (max-width: $minTablet) {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    @media (max-width: $minTablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 186px;
+    height: 70px;
+
+    margin-right: 20px;
+
+    font-family: $Bold;
+    font-size: 16px;
+    line-height: 16px;
+
+    color: #010101;
+    background-color: $yellowBG;
+
+    text-decoration: none;
+    transition: 0.4s;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @media (min-width: $desktop) {
+      &:hover {
+        color: $white;
+      }
+    }
+
+    @media (max-width: $minTablet) {
+      max-width: 280px;
+      width: 100%;
+
+      margin-right: 0;
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

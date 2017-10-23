@@ -1,0 +1,291 @@
+.footer {
+  width: 100%;
+  height: 244px;
+
+  background-color: #f0f0f0;
+
+  overflow: hidden;
+
+  @media (max-width: $minDesktop) {
+    height: 289px;
+  }
+
+  @media (max-width: $minTablet) {
+    height: auto;
+  }
+
+  .fixed-width-1280 {
+    @media (max-width: $minTablet) {
+      padding-top: 49px;
+      padding-bottom: 108px;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+
+    left: 55px;
+    top: 69px;
+
+    @media (max-width: $minDesktop) {
+      left: 39px;
+
+      img {
+        width: 87px;
+        height: 41px;
+      }
+
+      span {
+        margin-top: 9px;
+      }
+    }
+
+    @media (max-width: $minTablet) {
+      position: relative;
+
+      left: auto;
+      top: auto;
+
+      text-align: center;
+    }
+
+    img {
+      width: 118px;
+      height: 55px;
+
+      cursor: pointer;
+    }
+
+    span {
+      display: inline-block;
+
+      width: 100%;
+
+      margin-top: 26px;
+
+      color: #858585;
+      font-family: $Reg;
+      font-size: 13px;
+    }
+  }
+
+  &__social {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    right: 56px;
+    top: 68px;
+
+    @media (min-width: $desktop) {
+      svg {
+        transition: fill .5s ease;
+
+        &:hover {
+          fill: $yellowBG;
+        }
+      }
+    }
+
+    @media (max-width: $minDesktop) {
+      right: 43px;
+      top: 67px;
+
+      .icon-icon_in {
+        width: 13px;
+        height: 12px;
+      }
+
+      .icon-icon_twitter {
+        width: 13px;
+        height: 11px;
+      }
+
+      .icon-icon_insta {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    @media (max-width: $minTablet) {
+      position: relative;
+
+      right: auto;
+      top: auto;
+
+      margin-top: 43px;
+      margin-bottom: 31px;
+    }
+
+    svg {
+      fill: black;
+    }
+
+    a {
+      &:not(:first-child) {
+        margin-left: 22px;
+      }
+    }
+
+    .icon-icon_in {
+      width: 16px;
+      height: 15px;
+    }
+
+    .icon-icon_twitter {
+      width: 16px;
+      height: 13px;
+    }
+
+    .icon-icon_insta {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &__center {
+    position: absolute;
+
+    left: 304px;
+    top: 66px;
+
+    @media (max-width: $minDesktop) {
+      width: calc(100% - 375px);
+
+      left: 212px;
+    }
+
+    @media (max-width: $minTablet) {
+      position: relative;
+
+      left: auto;
+      top: auto;
+
+      width: 100%;
+    }
+  }
+
+  &__links {
+    a {
+      display: inline-block;
+
+      color: black;
+      font-family: $Bold;
+      font-size: 13px;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.8px;
+
+      &:not(:last-child) {
+        margin-right: 34px;
+      }
+
+      @media (min-width: $desktop) {
+        transition: color .5s ease;
+
+        &:hover {
+          color: $yellowBG;
+        }
+      }
+
+      @media (max-width: $minDesktop) {
+        font-size: 12px;
+
+        margin-bottom: 14px;
+      }
+
+      @media (max-width: $minTablet) {
+        margin-bottom: 0;
+
+        width: 100%;
+
+        text-align: center;
+
+        &:not(:first-child) {
+          margin-top: 21px;
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 39px;
+
+    @media (max-width: $minDesktop) {
+      margin-top: 41px;
+    }
+
+    @media (max-width: $minTablet) {
+      flex-direction: column;
+      margin-top: 44px;
+
+      .btn {
+        display: flex;
+
+        width: 199px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        &:not(:first-child) {
+          margin-top: 11px;
+        }
+      }
+    }
+  }
+
+  &__vintage {
+    position: absolute;
+
+    right: 56px;
+    top: 152px;
+
+    text-decoration: none;
+
+    @media (min-width: $desktop) {
+      svg {
+        transition: fill .5s ease;
+
+        &:hover {
+          fill: $yellowBG;
+        }
+      }
+    }
+
+    @media (max-width: $minDesktop) {
+      right: 40px;
+      top: 201px;
+    }
+
+    @media (max-width: $minTablet) {
+      right: auto;
+      left: 50%;
+      top: auto;
+      bottom: 38px;
+
+      transform: translate3d(-25%, 0, 0);
+    }
+
+    span {
+      position: absolute;
+
+      left: -21px;
+      top: -4px;
+
+      color: #858585;
+      font-family: $Reg;
+      font-size: 13px;
+    }
+
+    svg {
+      width: 11px;
+      height: 17px;
+
+      fill: black;
+    }
+  }
+}

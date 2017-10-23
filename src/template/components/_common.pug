@@ -1,0 +1,41 @@
+//- Button
+mixin btn(className, type)
+    a.btn(href = '#!', class = className || '')
+        if type === 'apple'
+            +svg('icon_apple')
+            span Apple Store
+        else if type === 'android'
+            +svg('icon_google_paly')
+            span Google Play
+
+//- Text block (title, subtitle). Can contain pagination.
+mixin textBlock(subtitle, titleId, paginationCount)
+    .textBlock
+        .textBlock__inner
+            .textBlock__item-small #{subtitle}
+            .textBlock__item-big.h2
+                if titleId === 1
+                    |enjoy
+                    span parking
+                        span
+                    |anytime anywhere
+                else if titleId === 2
+                    |let us
+                    span go
+                        span
+                    |...
+                else if titleId === 3
+                    |UNIP Platform offers
+                    span ready-to-use solution
+                        span
+                    |that consolidates interests of both drivers and parking owners
+                else if titleId === 4
+                    |UNIP
+                    span makes world better
+                        span
+                    |We are going to be in every city
+            if (paginationCount)
+                .textBlock__pagination
+                    - for (var i = 1; i <= paginationCount; i++) {
+                        .textBlock__pagination-item(class = i == 1 ? 'js-active' : '') 0#{i}
+                    - }

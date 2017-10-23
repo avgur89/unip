@@ -1,0 +1,314 @@
+extends ../extend/default
+
+block variables
+    -
+        var title = 'Unip';
+        var hasPreloader = false;
+        var slider3dSlides = 4;
+block footer
+    //- clear block
+block main
+    main(data-page='about')
+        .push-cnt
+        // Progress bar section
+        .progress-bar.animate-top
+            .progress-bar__inner
+                .progress-bar__current 01
+                .progress-bar__total 04
+                .progress-bar__bar
+                .progress-bar__pages
+                    .progress-bar__pages-page(data-section='4'): span 04
+                    .progress-bar__pages-page(data-section='3'): span 03
+                    .progress-bar__pages-page(data-section='2'): span 02
+                    .progress-bar__pages-page(data-section='1'): span 01
+
+        // Call to action video section
+        section.about__cta(style="background-image: url('img/about-cta.jpg')")
+            .container
+                .about__cta-desc.animate-fade-first
+                    .about__cta-text.regular-small company
+                    h1.about__cta-title.h1 About us
+                    .about__cta-subtitle.regular: p Modern software tool for complete parking management developed for Cities, Private operators and Drivers
+
+        // What & Why section
+        section.what.what__about(data-section="what" data-scrollTo="1" data-progress="1")
+            .container
+                .page-number
+                    .page-number__line.animate-fade-in
+                    .page-number__container.animate-top
+                        .page-number__square
+                        .page-number__number.regular-small 01
+
+                .what__item.animate-fade-up
+                    .what__title
+                        .what__subtitle.regular-small history
+                        h2.h2.what__title-text
+                            p how we <strong>started</strong>
+                    .what__img-wrapper
+                        img(class="what__img" src="img/about-what.jpg")
+                    .what__desc
+                        .what__desc-stripe.animate-delimeter-height
+                        p The UnIP history has started in 2014 when the software development house AU Group launched a new project on mobile application aiming to manage the city parking infrastructure. Later the mobile application has been transformed into full-scale cloud platform called UnIP.
+
+        // 3d slider section
+        section.techno(data-scrollTo="2" data-progress="2")
+            .container
+                .page-number
+                    .page-number__line.animate-fade-in
+                    .page-number__container.animate-top
+                        .page-number__square
+                        .page-number__number.regular-small 02
+
+                .techno__desc.animate-fade-up
+                    .techno__subtitle.regular-small our technologies
+                    .techno__title
+                        h2.techno__title-text.h2
+                            p <strong>AU Group</strong> of about 2,000 experienced programmers has 20+ years experience in IT industry and software development
+                    .techno__text.regular: p The company was primary and basically specialized in social platforms, games for mobile networks and devices (both iOS and Android), speech and language technologies and applications, enterprise solutions, embedded software, etc.
+
+                .slider3d__wrapper
+                    .slider3d__container.js-slide-1
+                        .slider3d__carousel.carousel
+                            .carousel-item
+                                img.backdrop(src='img/carousel-1.png')
+                                img.view(src='img/carousel-1.png')
+                            .carousel-item
+                                img.backdrop(src='img/carousel-1.png')
+                                img.view(src='img/carousel-1.png')
+                            .carousel-item
+                                img.backdrop(src='img/carousel-1.png')
+                                img.view(src='img/carousel-1.png')
+                            .carousel-item
+                                img.backdrop(src='img/carousel-1.png')
+                                img.view(src='img/carousel-1.png')
+                        .slider3d__overlay
+                            .slider3d__overlay-circle.slider3d__overlay-circle--big
+                            .slider3d__overlay-circle.slider3d__overlay-circle--medium
+                        .slider3d__text
+                            .slider3d__text-item.js-active(data-slide="1"): p Tell us where to go and we will tell you where to park. We will optimally drive you to the parking of your preference and to your final destination point
+                            .slider3d__text-item(data-slide="2"): p UNIP delivers detailed information about every parking lot on city map straight to your mobile phone
+                            .slider3d__text-item(data-slide="3"): p Simple and convenient payment with just two taps on your mobile phone. With various payment methods supported you can say NO to coins
+                            .slider3d__text-item(data-slide="4"): p We take care of your time: extend your parking session remotely. You will get notice early enough to return to your car and avoid fines
+                        .slider3d__heading
+                            .slider3d__heading-item(data-slide="1")
+                                h2.slider3d__heading-text.h2
+                                    p Included software development <strong>companies</strong>
+                            .slider3d__heading-item(data-slide="2")
+                                h2.slider3d__heading-text.h2
+                                    p Simple and convenient <strong>payment</strong>
+                            .slider3d__heading-item(data-slide="3")
+                                h2.slider3d__heading-text.h2
+                                    p UNIP delivers information about <strong>parking</strong>
+                            .slider3d__heading-item(data-slide="4")
+                                h2.slider3d__heading-text.h2
+                                    p We take care of your time <strong>parking</strong>
+
+                        .slider3d__pagination
+                            .slider3d__pagination-item.regular-small.js-active(data-slide="1") 01
+                            .slider3d__pagination-item.regular-small(data-slide="2") 02
+                            .slider3d__pagination-item.regular-small(data-slide="3") 03
+                            .slider3d__pagination-item.regular-small(data-slide="4") 04
+        // Project section
+        section.about__project(style="background-image: url('img/about-project.jpg')")
+            .container
+                .about__project-desc.animate-fade-up
+                    .about__project-text.regular-small With UnIP project
+                    h2.about__project-title.h2: p the new business direction in the sector of mobile solutions, information support and SaaS (software as a service) has been established
+        // Our team section
+        section.team(data-scrollTo="3" data-progress="3" data-white="true")
+            .container
+                .page-number
+                    .page-number__line.animate-fade-in
+                    .page-number__container.animate-top
+                        .page-number__square
+                        .page-number__number.regular-small 03
+
+                .team__subtitle.regular-small.animate-fade-up who we are
+                .team__title.animate-fade-up
+                    h2.team__title-text.h2
+                        p Our <strong>team</strong>
+                ul.team__list
+                    li.team__item.animate-fade-up
+                        a.team__item-link
+                            img.team__item-img(src="img/team1.jpg" alt="")
+                            .team__item-hover
+                                .team__item-desc
+                                    .team__item-desc-text.regular.dot(data-height="300"): p 20+ years of experience in the telecoms and technology industries. Previously Board Director at Priocom, one of the leading Ukrainian system integrators. Ilia also co-founded GMS AG, a telco operator specializing in SMS and MMS services across 200+ countries, $100M revenue p.a.
+                        .team__position
+                            .team__position-stripe.animate-delimeter-height
+                            .team__position-desc
+                                .team__position-name.regular Ilia Solodovsky
+                                .team__position-text.regular-small CEO & Chairman of the Board
+
+                    li.team__item.animate-fade-up
+                        a.team__item-link
+                            img.team__item-img(src="img/team2.jpg" alt="")
+                            .team__item-hover
+                                .team__item-desc
+                                    .team__item-desc-text.regular.dot(data-height="300"): p 20+ years of experience in the telecoms and technology industries. Previously Board Director at Priocom, one of the leading Ukrainian system integrators.
+                        .team__position
+                            .team__position-stripe.animate-delimeter-height
+                            .team__position-desc
+                                .team__position-name.regular Lawrence Pemble
+                                .team__position-text.regular-small COO
+
+                    li.team__item.animate-fade-up
+                        a.team__item-link
+                            img.team__item-img(src="img/team3.jpg" alt="")
+                            .team__item-hover
+                                .team__item-desc
+                                    .team__item-desc-text.regular.dot(data-height="300"): p Previously Board Director at Priocom, one of the leading Ukrainian system integrators. Ilia also co-founded GMS AG.
+                        .team__position
+                            .team__position-stripe.animate-delimeter-height
+                            .team__position-desc
+                                .team__position-name.regular Mykola Vasylyshin
+                                .team__position-text.regular-small VP Finance
+
+                    li.team__item.animate-fade-up
+                        a.team__item-link
+                            img.team__item-img(src="img/team4.jpg" alt="")
+                            .team__item-hover
+                                .team__item-desc
+                                    .team__item-desc-text.regular.dot(data-height="300"): p 20+ years of experience in the telecoms and technology industries. Previously Board Director at Priocom, one of the leading Ukrainian system integrators. Ilia also co-founded GMS AG, a telco operator specializing in SMS and MMS services across 200+ countries, $100M revenue p.a.
+                        .team__position
+                            .team__position-stripe.animate-delimeter-height
+                            .team__position-desc
+                                .team__position-name.regular Oksana Solodovska
+                                .team__position-text.regular-small Finance Director
+
+                    li.team__item.animate-fade-up
+                        a.team__item-link
+                            img.team__item-img(src="img/team5.jpg" alt="")
+                            .team__item-hover
+                                .team__item-desc
+                                    .team__item-desc-text.regular.dot(data-height="300"): p 20+ years of experience in the telecoms and technology industries. Previously Board Director at Priocom, one of the leading Ukrainian system integrators. Ilia also co-founded GMS AG, a telco operator specializing in SMS and MMS services across 200+ countries, $100M revenue p.a.
+                        .team__position
+                            .team__position-stripe.animate-delimeter-height
+                            .team__position-desc
+                                .team__position-name.regular Vitaly Bondarenko
+                                .team__position-text.regular-small Head of R&D
+
+                    li.team__item.animate-fade-up
+                        a.team__item-link
+                            img.team__item-img(src="img/team6.jpg" alt="")
+                            .team__item-hover
+                                .team__item-desc
+                                    .team__item-desc-text.regular.dot(data-height="300"): p 20+ years of experience in the telecoms and technology industries. Previously Board Director at Priocom, one of the leading Ukrainian system integrators. Ilia also co-founded GMS AG, a telco operator specializing in SMS and MMS services across 200+ countries, $100M revenue p.a.
+                        .team__position
+                            .team__position-stripe.animate-delimeter-height
+                            .team__position-desc
+                                .team__position-name.regular Alex Ousach
+                                .team__position-text.regular-small Director
+
+                .team__mobile-btn
+                    a.slider__button(href = '#!'): span show more
+
+                .team__ceo.animate-fade-up
+                    .team__ceo-inner
+                        a.team__ceo-link
+                            img.team__ceo-img(src="img/team7.jpg" alt="")
+                            .team__ceo-hover
+                                .team__ceo-desc
+                                    .team__ceo-desc-text.regular.dot(data-height="300"): p 20+ years of experience in the telecoms and technology industries. Previously Board Director at Priocom, one of the leading Ukrainian system integrators. Ilia also co-founded GMS AG, a telco operator specializing in SMS and MMS services across 200+ countries, $100M revenue p.a.
+                        .team__position
+                            .team__position-stripe.animate-delimeter-height
+                            .team__position-desc
+                                .team__position-name.regular Yuriy Makarenko
+                                .team__position-text.regular-small Director
+                    .team__ceo-text
+                        .team__ceo-stripe.animate-delimeter-width
+                        .regular: p Our team has continued to grow and grow. This year UnIP has been joined by many new faces and that’s not all, our team has grown in experience to help our expanding customer base.
+
+        // Partners section
+        section.partners(data-section="partners" data-scrollTo="4" data-progress="4")
+            .partners__slider-line
+            .partners__slider-mobile-square
+            .partners__slider-mobile-swipe.regular-small swipe
+
+            .container
+                .page-number
+                    .page-number__line.animate-fade-in
+                    .page-number__container.animate-top
+                        .page-number__square
+                        .page-number__number.regular-small 04
+
+                .partners__text.regular-small.animate-fade-in we work with
+                .partners__title.animate-fade-in
+                    h2.partners__title-text.h2
+                        p Our <strong>partners</strong>
+
+                .partners__slider
+                    .partners__slider-item
+                        .partners__slider-inner
+                            .partners__slider-dot
+                            .partners__slider-img-wrapper
+                                img.partners__slider-img(src="img/partner1.png" alt="")
+                            .partners__slider-desc
+                                .partners__slider-stripe
+                                .partners__slider-text.regular: p On seo is the game development company. We create games for various platforms: PC, Mac, Web, iOS, Android as well as for social networks.
+
+                    .partners__slider-item
+                        .partners__slider-inner
+                            .partners__slider-dot
+                            .partners__slider-img-wrapper
+                                img.partners__slider-img(src="img/partner2.png" alt="")
+                            .partners__slider-desc
+                                .partners__slider-stripe
+                                .partners__slider-text.regular: p On seo is the game development company. We create games for various platforms: PC, Mac, Web, iOS, Android as well as for social networks.
+
+                    .partners__slider-item
+                        .partners__slider-inner
+                            .partners__slider-dot
+                            .partners__slider-img-wrapper
+                                img.partners__slider-img(src="img/partner3.png" alt="")
+                            .partners__slider-desc
+                                .partners__slider-stripe
+                                .partners__slider-text.regular: p On seo is the game development company. We create games for various platforms: PC, Mac, Web, iOS, Android as well as for social networks.
+
+                    .partners__slider-item
+                        .partners__slider-inner
+                            .partners__slider-dot
+                            .partners__slider-img-wrapper
+                                img.partners__slider-img(src="img/partner4.png" alt="")
+                            .partners__slider-desc
+                                .partners__slider-stripe
+                                .partners__slider-text.regular: p On seo is the game development company. We create games for various platforms: PC, Mac, Web, iOS, Android as well as for social networks.
+
+                    .partners__slider-item
+                        .partners__slider-inner
+                            .partners__slider-dot
+                            .partners__slider-img-wrapper
+                                img.partners__slider-img(src="img/partner1.png" alt="")
+                            .partners__slider-desc
+                                .partners__slider-stripe
+                                .partners__slider-text.regular: p On seo is the game development company. We create games for various platforms: PC, Mac, Web, iOS, Android as well as for social networks.
+
+                    .partners__slider-item
+                        .partners__slider-inner
+                            .partners__slider-dot
+                            .partners__slider-img-wrapper
+                                img.partners__slider-img(src="img/partner2.png" alt="")
+                            .partners__slider-desc
+                                .partners__slider-stripe
+                                .partners__slider-text.regular: p On seo is the game development company. We create games for various platforms: PC, Mac, Web, iOS, Android as well as for social networks.
+
+                    .partners__slider-item
+                        .partners__slider-inner
+                            .partners__slider-dot
+                            .partners__slider-img-wrapper
+                                img.partners__slider-img(src="img/partner3.png" alt="")
+                            .partners__slider-desc
+                                .partners__slider-stripe
+                                .partners__slider-text.regular: p On seo is the game development company. We create games for various platforms: PC, Mac, Web, iOS, Android as well as for social networks.
+
+                    .partners__slider-item
+                        .partners__slider-inner
+                            .partners__slider-dot
+                            .partners__slider-img-wrapper
+                                img.partners__slider-img(src="img/partner4.png" alt="")
+                            .partners__slider-desc
+                                .partners__slider-stripe
+                                .partners__slider-text.regular: p On seo is the game development company. We create games for various platforms: PC, Mac, Web, iOS, Android as well as for social networks.
+
+        // Footer section
+        +footer()

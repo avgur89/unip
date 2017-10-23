@@ -1,0 +1,72 @@
+extends ../extend/default
+
+block variables
+    -
+        var title = 'Unip';
+        var hasPreloader = false;
+block footer
+    //- clear block
+block main
+    main(data-page='contacts')
+        .push-cnt
+        // Contacts section
+        .section.contacts
+            .container
+                .contacts__subtitle.regular-small.animate-fade-up contact us
+                .contacts__inner
+                    .contacts__item.animate-fade-up
+                        .contacts__title-wrapper
+                            .contacts__stripe.animate-delimeter-height
+                            h2.contacts__title.h2 Main adress
+                        .contacts__desc
+                            span.contacts__desc-text.regular Адресс: Менделеева 37,
+                            span.contacts__desc-text.regular E-mail:
+                                a.contacts__desc-email.regular(href="unip@gmail.com") unip@gmail.com
+                            span.contacts__desc-text.regular International:
+                                a.contacts__desc-tel.regular(href="tel:8.8888.8888.88") 8.8888.8888.88
+
+                    .contacts__item.animate-fade-up
+                        .contacts__title-wrapper
+                            .contacts__stripe.animate-delimeter-height
+                            h2.contacts__title.h2 Support
+                        .contacts__desc
+                            span.contacts__desc-text.regular E-mail:
+                                a.contacts__desc-email.regular(href="unip@gmail.com") unip@gmail.com
+                            span.contacts__desc-text.regular International:
+                                a.contacts__desc-tel.regular(href="tel:8.8888.8888.88") 8.8888.8888.88
+
+                    .contacts__item.animate-fade-up
+                        .contacts__title-wrapper
+                            .contacts__stripe.animate-delimeter-height
+                            h2.contacts__title.h2 Product
+                        .contacts__desc
+                            span.contacts__desc-text.regular E-mail:
+                                a.contacts__desc-email.regular(href="unip@gmail.com") unip@gmail.com
+                            span.contacts__desc-text.regular International:
+                                a.contacts__desc-tel.regular(href="tel:8.8888.8888.88") 8.8888.8888.88
+
+        // Form section
+        section.form__outer(style="background-image: url('img/contacts-map.jpg')")
+            .container
+                .form__inner
+                    h2.form__title.h2 You are looking for a strong partner?
+                    form.form(method="get")
+                        .form__wrapper
+                            .form__input-wrapper
+                                .form__group.has-error
+                                    input.form__control.regular(type="text" placeholder="Name")
+                                    .form__error-block.regular-small format is not valid
+                                .form__group
+                                    input.form__control.regular(type="email" placeholder="E-mail")
+                                    .form__error-block.regular-small format is not valid
+                            .form__group.form__group-textarea
+                                textarea.form__control.form__textarea.regular(type="text" placeholder="Your message")
+                                .form__error-block.regular-small format is not valid
+                        button.form__submit(type="submit")
+                            a.slider__button(href = '#!'): span send
+                    .form__thank
+                        h2.h2.form__thank-title
+                            | Спасибо!
+                            br
+                            |  Ваш запрос будет обработан в ближайшее время
+        +footer()

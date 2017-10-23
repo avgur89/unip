@@ -1,0 +1,32 @@
+//- slider section(e.g. Home page -> 4th section)
+-
+    var sliderSubtitle = 'What we offer';
+    var sliderSlides = [
+        {
+            title: 'Municipalities',
+            text: 'can effectively manage parking infrastructure and limit execess traffic UniP algorithm heps municipalities to calculate faire Parking Price and makes city parking always accessible'
+        },
+        {
+            title: 'Private operator',
+            text: 'in real time can control and manage own parking facilities, collect users database and switch on the booking service'
+        },
+        {
+            title: 'Example text',
+            text: 'can effectively manage parking infrastructure and limit execess traffic UniP algorithm heps municipalities to calculate faire Parking Price and makes city'
+        }
+    ];
+mixin sliderSection()
+    section.slider.js-perfect-scrollbar#slider-section
+        .slider__inner
+            .fixed-width-1280
+                +pageNumber(3)
+                +textBlock(sliderSubtitle, 3)
+                .slider__nextBtn
+                .slider__carousel.slick-carousel
+                    each slide in sliderSlides
+                        .slick-carousel__item
+                            .slick-carousel__item-star
+                            .slick-carousel__item-title.h1 #{slide.title}
+                            .slick-carousel__item-line
+                            .slick-carousel__item-text #{slide.text}
+                a.slider__button(href = '#!'): span learn more

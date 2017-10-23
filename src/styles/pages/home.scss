@@ -1,0 +1,10 @@
+[data-page='home'] {
+  #scrollInside {
+    @media (min-width: $desktop) {
+      max-height: 100vh;
+      width: 100%;
+
+      overflow-x: hidden;
+    }
+  }
+}

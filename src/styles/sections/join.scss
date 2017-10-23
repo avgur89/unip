@@ -1,0 +1,138 @@
+.join {
+  position: relative;
+
+  width: 100%;
+  height: 487px;
+
+  @media (max-width: $minTablet) {
+    height: auto;
+  }
+
+  .bottomBtn {
+    @media (max-width: $minDesktop) {
+      &__text {
+        top: -14px;
+      }
+    }
+
+    @media (max-width: $minTablet) {
+      bottom: -61px;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    &:before {
+      content: '';
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background-image: linear-gradient(to right, rgba(10, 12, 10, 0.6) 0%, rgba(10, 12, 10, 0) 100%);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+
+      @include object-fit(cover);
+    }
+  }
+
+  .fixed-width-1280 {
+    position: relative;
+
+    z-index: 2;
+
+    @media (max-width: $minTablet) {
+      padding-bottom: 96px;
+      padding-top: 50px;
+
+      overflow: hidden;
+    }
+  }
+
+  &__inner {
+    position: absolute;
+
+    top: 124px;
+    left: 146px;
+
+    @media (max-height: 770px) {
+      top: 155px;
+    }
+
+    @media (max-width: $minDesktop) {
+      left: 39px;
+      top: auto;
+      bottom: 130px;
+    }
+
+    @media (max-width: $minTablet) {
+      position: relative;
+
+      left: auto;
+      bottom: auto;
+      top: auto;
+    }
+  }
+
+  &__subtitle {
+    color: white;
+    font-family: $Reg;
+    font-size: 13px;
+    line-height: 21px;
+  }
+
+  &__title {
+    color: white;
+    font-family: $Light;
+    font-size: 46px;
+    line-height: 56px;
+
+    margin-top: 28px;
+
+    @media (max-width: $minTablet) {
+      font-size: 25px;
+
+      margin-top: 5px;
+    }
+  }
+
+  &__buttons {
+    margin-top: 57px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    @media (max-width: $minTablet) {
+      margin-top: 25px;
+      flex-direction: column;
+
+      .btn {
+        display: flex;
+
+        width: 100%;
+
+        margin-left: 0;
+
+        &:not(:first-child) {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}

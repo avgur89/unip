@@ -1,0 +1,55 @@
+include ../partials/_variables
+include ../partials/_mixins
+
+doctype html
+html(lang='ru')
+
+    block variables
+        - var title = defaultPageTitle;
+        - var hasPreloader = true;
+
+    block head
+        head
+            meta(name='format-detection', content='telephone=no')
+            meta(charset='utf-8')
+            meta(http-equiv='X-UA-Compatible', content='IE=9;IE=10;IE=Edge,chrome=1')
+            meta(name='viewport', content='width=device-width, initial-scale=1.0')
+            title= title
+            link(href='css/index.min.css', rel='stylesheet')
+            link(rel='icon', href='favicon.png')
+
+    block body
+        body(class = hasPreloader ? 'js-has-preloader' : '')
+            // SVG
+            block svg
+                div.svg-container(style="position: absolute; width: 0; height: 0; overflow: hidden;")
+                    include ../partials/_sprite.svg
+
+            // Global baseUrl and webpackManifest variables (for back-end purpose), picture element HTML5 shiv
+            block inlineScripts
+                script.
+                  document.createElement('picture');
+                  window.baseUrl = location.origin;
+                  window.webpackManifest = !{JSON.stringify(webpackManifest)};
+
+            block preloader
+                if hasPreloader
+                    // Preloader
+                    +preloader()
+
+            // Header
+            block header
+                +header()
+
+            // Main content
+            block main
+                main
+
+            block footer
+                +footer()
+
+            // Scripts
+            block scripts
+                script(src='static/js/three.min.js')
+                script(src='static/js/index.jquery.js')
+                script(src='static/js/index.js')
